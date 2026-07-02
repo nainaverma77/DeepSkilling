@@ -38,7 +38,7 @@ if (-not (Test-Path bin)) {
 }
 
 # Compile source files
-javac -cp "lib/*" -d bin src/main/java/com/library/repository/BookRepository.java src/main/java/com/library/service/BookService.java src/main/java/com/library/Main.java
+javac -cp "lib/*" -d bin src/main/java/com/library/repository/BookRepository.java src/main/java/com/library/service/BookService.java src/main/java/com/library/LibraryManagementApplication.java
 if ($LASTEXITCODE -ne 0) {
     Write-Error "Compilation failed!"
     exit $LASTEXITCODE
@@ -53,8 +53,8 @@ Write-Host "[SUCCESS] Resources copied."
 Write-Host ""
 
 # Step 3: Run the application
-Write-Host "[STEP 3] Running com.library.Main..."
+Write-Host "[STEP 3] Running com.library.LibraryManagementApplication..."
 Write-Host "--------------------------------------------------"
-java -cp "bin;lib/*" com.library.Main
+java -cp "bin;lib/*" com.library.LibraryManagementApplication
 Write-Host "--------------------------------------------------"
 Write-Host "[SUCCESS] Execution complete."
