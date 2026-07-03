@@ -1,0 +1,4 @@
+com\cts\springdatajpa\SpringDataJpaApplication.class
+com\cts\springdatajpa\service\CountryService.class
+com\cts\springdatajpa\entity\Country.class
+com\cts\springdatajpa\repository\CountryRepository.class
