@@ -1,0 +1,387 @@
+/* App.css - Premium Flight Booking Dashboard Styling */
+
+:root {
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --success: #10b981;
+  --success-hover: #059669;
+  --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --card-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.08);
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --border-color: #e5e7eb;
+}
+
+/* App Container Layout */
+.app-container {
+  min-height: 100vh;
+  background: var(--bg-gradient);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem 1.5rem;
+  box-sizing: border-box;
+}
+
+/* Auth Panel - Centered visual card */
+.auth-panel {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 1.25rem;
+  box-shadow: var(--card-shadow);
+  padding: 2rem 3rem;
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  margin-bottom: 2.5rem;
+  transition: all 0.3s ease;
+}
+
+.auth-panel:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.12);
+}
+
+.greeting-text {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 1.25rem 0;
+  letter-spacing: -0.025em;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Auth Buttons */
+.auth-btn {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.login-btn {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  color: white;
+}
+
+.login-btn:hover {
+  background: linear-gradient(135deg, #5a5df0 0%, #4338ca 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.3), 0 4px 6px -2px rgba(79, 70, 229, 0.05);
+}
+
+.login-btn:active {
+  transform: translateY(0);
+}
+
+.logout-btn {
+  background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+  color: white;
+}
+
+.logout-btn:hover {
+  background: linear-gradient(135deg, #5b6270 0%, #374151 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(75, 85, 99, 0.3), 0 4px 6px -2px rgba(75, 85, 99, 0.05);
+}
+
+.logout-btn:active {
+  transform: translateY(0);
+}
+
+/* Dashboard Content Grid */
+.dashboard-content {
+  width: 100%;
+  max-width: 1200px;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  width: 100%;
+}
+
+@media (min-width: 968px) {
+  .grid-layout {
+    grid-template-columns: 1.4fr 1fr;
+  }
+}
+
+.grid-item {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 1.25rem;
+  box-shadow: var(--card-shadow);
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  height: fit-content;
+}
+
+/* Sections Typography */
+.section-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 0.5rem 0;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: 0.925rem;
+  margin: 0 0 1.5rem 0;
+}
+
+/* Flight Details Component Styling */
+.table-responsive {
+  overflow-x: auto;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-color);
+}
+
+.flight-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.flight-table th {
+  background-color: #f9fafb;
+  color: var(--text-muted);
+  font-weight: 600;
+  padding: 1rem;
+  border-bottom: 2px solid var(--border-color);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.flight-table td {
+  padding: 1.25rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-main);
+}
+
+.flight-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.flight-table tbody tr:hover {
+  background-color: rgba(79, 70, 229, 0.03);
+}
+
+.flight-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.flight-no {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.flight-price {
+  font-weight: 700;
+  color: #111827;
+}
+
+/* Action Badges & Buttons */
+.book-action-btn {
+  background: var(--success);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.book-action-btn:hover {
+  background: var(--success-hover);
+  transform: scale(1.05);
+}
+
+.restricted-badge {
+  background-color: #fee2e2;
+  color: #ef4444;
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* Booking Form Card Styling */
+.booking-card {
+  transition: all 0.3s ease;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.form-group input,
+.form-group select {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  background-color: white;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  color: var(--text-main);
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+.submit-booking-btn {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.85rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.2);
+  margin-top: 0.5rem;
+}
+
+.submit-booking-btn:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px -2px rgba(16, 185, 129, 0.3);
+}
+
+/* Booking Success Screen */
+.booking-success {
+  text-align: center;
+  padding: 1.5rem 0;
+  animation: scaleIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.success-icon {
+  width: 50px;
+  height: 50px;
+  background-color: #d1fae5;
+  color: var(--success);
+  font-size: 1.75rem;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem auto;
+}
+
+.booking-success h3 {
+  font-family: 'Outfit', sans-serif;
+  margin: 0 0 0.5rem 0;
+  color: #065f46;
+}
+
+.booking-success p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 0 0 1.5rem 0;
+}
+
+.ticket-details {
+  background-color: #f9fafb;
+  border: 1px dashed var(--border-color);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  text-align: left;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.ticket-details p {
+  margin: 0.5rem 0;
+  color: var(--text-main);
+}
+
+.ticket-details p strong {
+  color: #374151;
+  display: inline-block;
+  width: 120px;
+}
+
+.reset-btn {
+  background-color: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 0.6rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.reset-btn:hover {
+  background-color: rgba(79, 70, 229, 0.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
