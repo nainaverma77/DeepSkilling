@@ -1,0 +1,233 @@
+/* Reset and General Styles */
+body {
+  margin: 0;
+  font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #fafafa;
+  color: #1a1a1a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+/* Header & Control Panel Styles */
+.app-header {
+  text-align: center;
+  margin-bottom: 40px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.app-header h1 {
+  font-size: 2.5rem;
+  color: #2e7d32;
+  margin-bottom: 10px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.app-header p {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+.controls-card {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  margin-bottom: 40px;
+  width: 100%;
+  max-width: 900px;
+  box-sizing: border-box;
+}
+
+.controls-card h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.control-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.control-group:last-child {
+  margin-bottom: 0;
+  padding-top: 15px;
+  border-top: 1px dashed #eee;
+}
+
+.btn-toggle {
+  background-color: #f1f8e9;
+  color: #33691e;
+  border: 2px solid #dcedc8;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-toggle:hover {
+  background-color: #a8dac5;
+  color: #1b5e20;
+}
+
+.btn-toggle.active {
+  background-color: #2e7d32;
+  color: white;
+  border-color: #2e7d32;
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.2);
+}
+
+.checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  color: #444;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox-label input {
+  accent-color: #2e7d32;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* Columns Layout Container */
+.columns-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  max-width: 1200px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  padding: 40px 10px;
+  margin-top: 20px;
+  box-sizing: border-box;
+}
+
+/* Columns Styling (Note classes are customized to match Image 5 hints) */
+
+.mystyle1 {
+  order: 1; /* Visual leftmost column */
+  flex: 1;
+  border-right: 5px solid #008000; /* Green Divider */
+  padding: 20px 30px;
+  text-align: center;
+  min-width: 250px;
+}
+
+.st2 {
+  order: 2; /* Visual middle column */
+  flex: 1;
+  border-right: 5px solid #008000; /* Green Divider */
+  padding: 20px 30px;
+  text-align: center;
+  min-width: 250px;
+}
+
+.v1 {
+  order: 3; /* Visual rightmost column */
+  flex: 1;
+  padding: 20px 30px;
+  text-align: center;
+  min-width: 250px;
+}
+
+/* Typography and Content Elements in Columns */
+.mystyle1 h1, .st2 h1, .v1 h1 {
+  font-size: 2.2rem;
+  color: #111;
+  margin-top: 0;
+  margin-bottom: 35px;
+  font-weight: 800;
+}
+
+.mystyle1 h3, .st2 h3, .v1 h3 {
+  font-size: 1.6rem;
+  color: #111;
+  margin-top: 25px;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.mystyle1 h4, .st2 h4, .v1 h4 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-top: 8px;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.mystyle1 h5, .v1 h5 {
+  font-size: 1.1rem;
+  color: #555;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.v1 p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+  margin-top: 5px;
+  margin-bottom: 25px;
+}
+
+/* Lists styling reset */
+.mystyle1 ul, .st2 ul, .v1 ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Empty or hidden states */
+.empty-state {
+  color: #999;
+  font-style: italic;
+  padding: 20px 0;
+}
+
+/* Responsive adjustment for small screens */
+@media (max-width: 850px) {
+  .columns-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .mystyle1, .st2, .v1 {
+    border-right: none;
+    border-bottom: 3px solid #008000;
+    padding: 30px 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .v1 {
+    border-bottom: none;
+  }
+}
