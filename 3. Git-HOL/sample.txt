@@ -1,0 +1,2 @@
+This is a sample file created on GitNewBranch to demonstrate branching and merging in Git.
+Adding some contents to track.
