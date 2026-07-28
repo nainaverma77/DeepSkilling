@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <greeting>
-    <message>Hello from main branch (trunk)!</message>
+    <message>Hello from main branch and GitWork branch!</message>
     <version>1.0.0-trunk</version>
+    <author>Developer GitWork</author>
 </greeting>
